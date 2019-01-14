@@ -1,0 +1,4 @@
+.DS_Store
+audio/
+node_modules/**
+

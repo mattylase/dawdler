@@ -1,0 +1,48 @@
+<html>
+
+<head>
+  <!---<link rel="stylesheet" href="index.css">-->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="../../lib/tone.js"></script>
+  <script src="../frontend/components/note.js"></script>
+  <link rel="stylesheet" type="text/css" href="./index.css">
+</head>
+
+<body>
+  <div id="app">
+    <div id="navbar">
+      <div id="bpm-wrapper">
+        <p>BPM</p>
+        <input value="80" @change="bpmChange" />
+      </div>
+    </div>
+    <div id="rowholder">
+      <div v-for="row, rowindex in noteRows" class="noteRow">
+        <div class="label-wrapper" @dblclick="toggleYT(row)">
+          <div class="row-label">
+            <label>{{row[0].ytMode ? "Code" : "Note"}}</label>
+            <input v-model="row[0].note" @keyup.enter="noteChanged(row)"></input>
+          </div>
+          <div class="row-label">
+            <label>Volu</label>
+            <input v-model="row[0].volume" @change="volumeChanged(row)"></input>
+          </div>
+        </div>
+        <div v-for="noteinfo, noteindex in row">
+          <note :key="noteinfo.id" :noteinfo="noteinfo" :noteindex="noteindex" :rowindex="rowindex" @note-toggled="handleNoteToggle"></note>
+        </div>
+      </div>
+    </div>
+    <div id="bottomRow">
+      <div>
+        <button v-on:click="addRow">+</button>
+        <button v-on:click="removeRow">-</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>

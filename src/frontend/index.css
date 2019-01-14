@@ -1,0 +1,102 @@
+body {
+    background-color: #9AABB9
+}
+
+.noteRow {
+    display: flex;
+    flex-direction: row;
+}
+
+#rowholder {
+    padding-top: 64px;
+}
+
+.noteButton {
+    width: 64;
+    height: 64px;
+    margin: 16px;
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 8px;
+    background-color: gainsboro;
+}
+
+.noteButton:focus {
+    outline: none;
+}
+
+#navbar {
+    width: 100%;
+    height: 56px;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: #39376D;
+    padding: 4px 16px;
+}
+
+body {
+    margin: 0px;
+}
+
+#bpm-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#bpm-wrapper > p {
+    color: #e2e5ff;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+input {
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    width: 32px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    margin-left: 8px;
+}
+
+.row-label {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    color: #e2e5ff;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+#bottomRow {
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    background-color: #39376D;
+    padding: 8px;
+}
+
+#bottomRow button {
+    width: 40px;
+    height: 40px;
+    border-color: transparent;
+    font-weight: bolder;
+    font-size: 16pt;
+    display: table-cell;
+    vertical-align: middle;
+    border-radius: 25px;
+}
+
+.label-wrapper {
+    border-top: 1px outset;
+    border-bottom: 1px outset;
+    background-color: #2F9475;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
